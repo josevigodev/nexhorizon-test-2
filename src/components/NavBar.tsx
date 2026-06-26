@@ -30,9 +30,7 @@ export function NavBar() {
               <Image
                 src={NexHorizonLogo}
                 alt='NexHorizon Logo'
-                height={50}
-                width={100}
-                className='object-contain object-center aspect-video'
+                className='object-contain object-center'
               />
             </Link>
 
