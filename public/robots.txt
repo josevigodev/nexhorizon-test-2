@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json
+Disallow: /api/
+
+Sitemap: https://nexthorizon.tech/sitemap.xml
+
+# Allow crawling of specific resources
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Request rate (pages per 10 seconds)
+Request-rate: 10/10s
+
+# Google specific
+User-agent: Googlebot
+Disallow: /admin/
+Allow: /
+
+# Bing specific
+User-agent: Bingbot
+Disallow: /admin/
+Allow: /

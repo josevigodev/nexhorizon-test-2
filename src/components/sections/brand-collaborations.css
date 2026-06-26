@@ -1,0 +1,82 @@
+.brand-collaborations-shell {
+  background: transparent;
+}
+
+.brand-collaborations-orb {
+  display: none;
+}
+
+.brand-collaborations-orb-cyan {
+  top: 3rem;
+  left: -6rem;
+  background: rgba(52, 152, 219, 0.12);
+}
+
+.brand-collaborations-orb-rose {
+  right: -6rem;
+  bottom: 0;
+  background: rgba(93, 109, 126, 0.1);
+}
+
+.brand-collaborations-marquee {
+  position: relative;
+  overflow: hidden;
+  min-height: 10rem;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    transparent 100%
+  );
+}
+
+.brand-collaboration-logo {
+  --logo-slot: 28rem;
+  --logo-duration: 90s;
+  position: absolute;
+  top: 50%;
+  left: calc(var(--logo-slot) * var(--logo-count));
+  display: block;
+  width: auto;
+  max-width: 32rem;
+  height: 11rem;
+  transform: translateY(-50%);
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.12);
+  opacity: 0.88;
+  animation: brand-collaborations-ticker var(--logo-duration) linear infinite;
+  animation-delay: calc(
+    (var(--logo-duration) / var(--logo-count)) * var(--logo-index) * -1
+  );
+}
+
+@keyframes brand-collaborations-ticker {
+  from {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  to {
+    transform: translateY(-50%)
+      translateX(calc(-1 * var(--logo-slot) * var(--logo-count)));
+  }
+}
+
+@media (max-width: 767px) {
+  .brand-collaborations-marquee {
+    min-height: 9rem;
+  }
+
+  .brand-collaboration-logo {
+    --logo-slot: 21rem;
+    --logo-duration: 75s;
+    max-width: 24rem;
+    height: 8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-collaboration-logo {
+    animation: none;
+  }
+}
